@@ -1,0 +1,241 @@
+/* Hallmark · macrostructure: Bespoke (Terminal) · theme: Custom (Brutalist ASCII)
+ * pre-emit critique: P5 H5 E5 S5 R5 V5
+ * audience: everybody · use: portfolio · tone: brutalist/technical
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --color-paper: oklch(0.08 0 0);          /* Near black */
+  --color-paper-2: oklch(0.14 0 0);        /* Slightly lighter */
+  --color-ink: oklch(0.88 0 0);            /* Off-white */
+  --color-ink-muted: oklch(0.45 0 0);      /* Mid grey */
+  --color-accent: oklch(0.88 0 0);         /* White — no color */
+  --color-root: oklch(0.62 0.22 25);       /* Red for root */
+  --color-accent-alt: oklch(0.62 0.22 25); /* Red for playful bits too */
+  --color-focus: var(--color-ink);
+
+  --font-display: 'JetBrains Mono', monospace;
+  --font-body: 'JetBrains Mono', monospace;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  --radius: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 14px;
+  overflow-x: clip;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ── Terminal Layout ──────────────────────────────────────── */
+
+.terminal-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  cursor: text;
+}
+
+.banner {
+  color: var(--color-ink);
+  font-size: 0.45rem;
+  line-height: 1.15;
+  margin: 0 0 var(--space-xs);
+  overflow: hidden;
+  user-select: none;
+}
+
+
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.divider {
+  color: var(--color-ink-muted);
+  margin: var(--space-sm) 0 var(--space-md);
+  user-select: none;
+}
+
+.terminal-history {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.terminal-line {
+  line-height: 1.5;
+}
+
+/* ── Prompt ───────────────────────────────────────────────── */
+
+.prompt {
+  font-weight: 700;
+  margin-right: 0;
+  white-space: nowrap;
+}
+
+.prompt-root {
+  color: var(--color-root);
+}
+
+.prompt-at {
+  color: var(--color-ink-muted);
+}
+
+.prompt-host {
+  color: var(--color-ink);
+}
+
+.prompt-sep {
+  color: var(--color-ink-muted);
+}
+
+.command-echo {
+  color: var(--color-ink);
+}
+
+.output {
+  color: var(--color-ink-muted);
+  white-space: pre-wrap;
+  margin-top: 2px;
+  padding-left: 1ch;
+}
+
+/* ── Input ────────────────────────────────────────────────── */
+
+.input-row {
+  display: flex;
+  align-items: center;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 14px;
+  flex: 1;
+  outline: none;
+  caret-color: var(--color-ink);
+}
+
+.terminal-input:focus-visible {
+  outline: none;
+}
+
+/* ── Bunny ────────────────────────────────────────────────── */
+
+.bunny {
+  position: fixed;
+  pointer-events: none;
+  z-index: 50;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+}
+
+/* ── Spotify Widget ───────────────────────────────────────── */
+
+.spotify-widget {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 40;
+  user-select: none;
+}
+
+.spotify-ascii {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--color-ink-muted);
+}
+
+/* ── Accents ──────────────────────────────────────────────── */
+
+.highlight {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.pink {
+  color: var(--color-accent-alt);
+}
+
+.ink-muted {
+  color: var(--color-ink-muted);
+}
+
+.link {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  text-decoration: none;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-paper-2);
+}
+
+/* ── Mobile ───────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .banner {
+    font-size: 0.28rem;
+  }
+
+  .terminal-container {
+    padding: var(--space-md);
+  }
+
+  .spotify-widget {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    max-width: 100%;
+    margin-bottom: var(--space-md);
+  }
+}
