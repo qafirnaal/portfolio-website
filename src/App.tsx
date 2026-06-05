@@ -61,6 +61,10 @@ const CONTACT_OUTPUT = (
     GitHub:   <a className="link" href="https://github.com/qafirnaal" target="_blank" rel="noreferrer">github.com/qafirnaal</a>
     <br />
     LinkedIn: <a className="link" href="https://www.linkedin.com/in/dev-rathore-770b8a350/" target="_blank" rel="noreferrer">dev-rathore-770b8a350</a>
+    <br />
+    Discord:  <span className="link">deva0853</span>
+    <br />
+    Steam:    <a className="link" href="https://steamcommunity.com/id/qafirnaal/" target="_blank" rel="noreferrer">steamcommunity.com/id/qafirnaal</a>
   </div>
 );
 
