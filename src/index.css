@@ -230,4 +230,9 @@ html, body {
   .terminal-container {
     padding: var(--space-md);
   }
+
+  .spotify-widget {
+    bottom: var(--space-sm);
+    right: var(--space-sm);
+  }
 }
