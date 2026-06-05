@@ -10,12 +10,15 @@ interface HistoryItem {
 /* ── Persistent blocks (never cleared) ─────────────────────── */
 
 const BANNER = `
- _____        __ _                        _ 
-|  _  |      / _(_)                      | |
-| | | | __ _| |_ _ _ __ _ __   __ _  __ _| |
-| | | |/ _\` |  _| | '__| '_ \\ / _\` |/ _\` | |
-\\ \\/' / (_| | | | | |  | | | | (_| | (_| | |
- \\_/\\_\\\\__,_|_| |_|_|  |_| |_|\\__,_|\\__,_|_|`;
+ .0101101.            .1011 010                                    101 
+0110. .1011          1010.  011                                    010 
+101     010          110                                           110 
+010     101  01101.  101101 011 1010110 101010.   01101.   10110.  101 
+110     011     .101 010    101 0110.   011 .101     .010     .101 011 
+011 101 110 .0101101 101    010 110     101  011 .1011010 .0110101 101 
+1010.011010 110  011 011    101 010     110  101 110  011 011  101 010 
+ .1010101.  .0110101 101    010 110     011  101 .1010101 .1011010 110 
+       011                                                             `;
 
 const HELP_OUTPUT = (
   <div className="output">
@@ -33,8 +36,8 @@ const HELP_OUTPUT = (
 
 const ABOUT_OUTPUT = (
   <div className="output">
-    Hey, I'm <span className="highlight">devrathore</span>.{' '}
-    <span className="pink">"I break stuff (occasionally)"</span>
+    Hey, I'm <span className="highlight">Dev Rathore</span>.{' '}
+    <span className="pink">I break stuff (occasionally)</span>
     <br /><br />
     Currently studying at <span className="highlight">BITS Pilani</span>.
     <br />
@@ -46,7 +49,7 @@ const PROJECTS_OUTPUT = (
   <div className="output">
     <span className="highlight">01</span>  CTF Tooling — Automation scripts for reverse engineering &amp; pwn.
     <br />
-    <span className="highlight">02</span>  qafirnaal — This terminal you're staring at right now.
+    <span className="highlight">02</span>  deva — This terminal you're staring at right now.
     <br />
     <span className="highlight">03</span>  Compiler — A real compiler. Written at BITS. It compiles.
     <br />
@@ -217,11 +220,15 @@ function SpotifyWidget() {
   ];
   const eq = eqFrames[frame % eqFrames.length];
 
+  const searchUrl = `https://open.spotify.com/search/${encodeURIComponent(songName + ' ' + artistName)}`;
+
   return (
     <div className="spotify-widget">
-      <pre className="spotify-ascii">{
-        `♫ Now Playing [${eq}]\n> ${songName} — ${artistName}`
-      }</pre>
+      <a href={searchUrl} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }} title="Open in Spotify">
+        <pre className="spotify-ascii" style={{ cursor: 'pointer' }}>{
+          `♫ Now Playing [${eq}]\n> ${songName} — ${artistName}`
+        }</pre>
+      </a>
     </div>
   );
 }
@@ -233,7 +240,7 @@ function Prompt() {
     <span className="prompt">
       <span className="prompt-root">root</span>
       <span className="prompt-at">@</span>
-      <span className="prompt-host">qafirnaal</span>
+      <span className="prompt-host">deva</span>
       <span className="prompt-sep">:~# </span>
     </span>
   );
