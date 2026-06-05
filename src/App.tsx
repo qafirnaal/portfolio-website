@@ -160,7 +160,7 @@ function SpotifyWidget() {
   }, [isPlaying]);
 
   useEffect(() => {
-    if (LASTFM_USERNAME === 'YOUR_LASTFM_USERNAME') return;
+    if (!LASTFM_USERNAME) return;
 
     const fetchLastFm = async () => {
       try {
