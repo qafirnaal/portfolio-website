@@ -10,12 +10,12 @@ interface HistoryItem {
 /* ── Persistent blocks (never cleared) ─────────────────────── */
 
 const BANNER = `
-  ██████╗  █████╗ ███████╗██╗██████╗ ███╗   ██╗ █████╗  █████╗ ██╗     
- ██╔═══██╗██╔══██╗██╔════╝██║██╔══██╗████╗  ██║██╔══██╗██╔══██╗██║     
- ██║   ██║███████║█████╗  ██║██████╔╝██╔██╗ ██║███████║███████║██║     
- ██║▄▄ ██║██╔══██║██╔══╝  ██║██╔══██╗██║╚██╗██║██╔══██║██╔══██║██║     
- ╚██████╔╝██║  ██║██║     ██║██║  ██║██║ ╚████║██║  ██║██║  ██║███████╗
-  ╚══▀▀═╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝`;
+ _____        __ _                        _ 
+|  _  |      / _(_)                      | |
+| | | | __ _| |_ _ _ __ _ __   __ _  __ _| |
+| | | |/ _\` |  _| | '__| '_ \\ / _\` |/ _\` | |
+\\ \\/' / (_| | | | | |  | | | | (_| | (_| | |
+ \\_/\\_\\\\__,_|_| |_|_|  |_| |_|\\__,_|\\__,_|_|`;
 
 const HELP_OUTPUT = (
   <div className="output">
@@ -34,7 +34,7 @@ const HELP_OUTPUT = (
 const ABOUT_OUTPUT = (
   <div className="output">
     Hey, I'm <span className="highlight">devrathore</span>.{' '}
-    <span className="pink">"I break stuff (intentionally)"</span>
+    <span className="pink">"I break stuff (occasionally)"</span>
     <br /><br />
     Currently studying at <span className="highlight">BITS Pilani</span>.
     <br />
